@@ -76,6 +76,11 @@
         //   console.log('Hi');
         const now = new Date(); // log the date
         const seconds = now.getSeconds(); // gets us the seconds of the current minute
+
+        // now transform seconds to degrees
+        const secondsDegrees = ((seconds / 60) * 360);
+        console.log(seconds);
+
       }
 
       // run every second
