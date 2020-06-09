@@ -74,22 +74,33 @@
   <script>
       // now, grab the second hand and pull it into the function below
       const secondHand = document.querySelector('.second-hand');
+      const firstHand = document.querySelector('.first-hand');
 
       function setDate() {
-        //   console.log('Hi');
+        // console.log('Hi');
+
+        // SECONDS
         const now = new Date(); // log the date
+
         const seconds = now.getSeconds(); // gets us the seconds of the current minute
 
         // now transform seconds to degrees
         // adding 90 degrees to offset that default 90 degrees
         // this allows the timing of the hand to match the seconds
         const secondsDegrees = ((seconds / 60) * 360) + 90;
-
         secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+        // console.log(seconds);
 
-        console.log(seconds);
+        // MINUTES
+        const mins = now.getMinutes();
+        const minsDegrees = ((mins / 60) * 360) + 90;
+        firstHand.style.transform = `rotate(${minsDegrees}deg)`;
 
-      }
+
+        // HOURS
+        // const hours = ;
+
+      };
 
       // run every second
       setInterval(setDate, 1000);
