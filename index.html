@@ -73,9 +73,12 @@
 
   <script>
       function setDate() {
-          console.log('Hi');
+        //   console.log('Hi');
+        const now = new Date(); // log the date
+        const seconds = now.getSeconds(); // gets us the seconds of the current minute
       }
 
+      // run every second
       setInterval(setDate, 1000);
 
   </script>
