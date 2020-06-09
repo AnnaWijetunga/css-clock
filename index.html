@@ -81,7 +81,9 @@
         const seconds = now.getSeconds(); // gets us the seconds of the current minute
 
         // now transform seconds to degrees
-        const secondsDegrees = ((seconds / 60) * 360);
+        // adding 90 degrees to offset that default 90 degrees
+        // this allows the timing of the hand to match the seconds
+        const secondsDegrees = ((seconds / 60) * 360) + 90;
 
         secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
